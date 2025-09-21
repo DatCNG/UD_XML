@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<khoahoc
+  xmlns:course="http://example.com/course"
+  xmlns:instructor="http://example.com/instructor"
+  xmlns:student="http://example.com/student">
+
+  <course:course course:id="C001" course:category="Lập trình">
+    <course:title>Python cơ bản</course:title>
+
+    <instructor:instructor instructor:id="I001">
+      <instructor:name>Nguyễn Văn A</instructor:name>
+      <instructor:email>nguyenvana@gmail.com</instructor:email>
+    </instructor:instructor>
+
+    <course:students>
+      <student:student student:id="S001" student:progress="80">
+        <student:name>Nguyễn Văn B</student:name>
+      </student:student>
+      <student:student student:id="S002" student:progress="50">
+        <student:name>Nguyễn Văn C</student:name>
+      </student:student>
+    </course:students>
+  </course:course>
+
+  <course:course course:id="C002" course:category="Thiết kế">
+    <course:title>Thiết kế UI căn bản</course:title>
+
+    <instructor:instructor instructor:id="I002">
+      <instructor:name>Nguyễn Văn D</instructor:name>
+      <instructor:email>nguyenvand@gmail.com</instructor:email>
+    </instructor:instructor>
+
+    <course:students>
+      <student:student student:id="S003" student:progress="95">
+        <student:name>Nguyễn Văn E</student:name>
+      </student:student>
+      <student:student student:id="S004" student:progress="60">
+        <student:name>Nguyễn Văn F</student:name>
+      </student:student>
+      <student:student student:id="S005" student:progress="30">
+        <student:name>Nguyễn Văn G</student:name>
+      </student:student>
+    </course:students>
+  </course:course>
+
+</khoahoc>

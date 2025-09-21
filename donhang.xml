@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<donhang xmlns:order="http://company.com/order"
+        xmlns:prod="http://company.com/product">
+
+  <order:order order:id="O001" order:customer="Nguyễn Văn A" order:date="2025-03-02">
+    <prod:item prod:id="P001" prod:quantity="2" prod:price="500">
+      <prod:name>Điện thoại Samsung</prod:name>
+    </prod:item>
+    <prod:item prod:id="P002" prod:quantity="1" prod:price="1000">
+      <prod:name>Laptop Dell</prod:name>
+    </prod:item>
+  </order:order>
+
+  <order:order order:id="O002" order:customer="Nguyễn Văn A B" order:date="2025-03-05">
+    <prod:item prod:id="P003" prod:quantity="3" prod:price="200">
+      <prod:name>Tai nghe Bluetooth</prod:name>
+    </prod:item>
+    <prod:item prod:id="P004" prod:quantity="2" prod:price="150">
+      <prod:name>Bàn phím cơ</prod:name>
+    </prod:item>
+    <prod:item prod:id="P005" prod:quantity="1" prod:price="1200">
+      <prod:name>Laptop MacBook Air</prod:name>
+    </prod:item>
+  </order:order>
+
+</donhang>

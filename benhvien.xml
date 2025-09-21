@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<benhvien xmlns="http://example.com/benhvien"
+          xmlns:pat="http://example.com/patient"
+          xmlns:doc="http://example.com/doctor"
+          xmlns:app="http://example.com/appointment">
+
+  <app:appointment app:id="A001" app:date="2025-03-05" app:status="Đã khám">
+    <pat:patient pat:id="P001">
+      <pat:name>Nguyễn Văn A</pat:name>
+      <pat:dob>1990-07-15</pat:dob>
+    </pat:patient>
+    <doc:doctor doc:id="D001">
+      <doc:name>Nguyễn Văn B</doc:name>
+      <doc:specialty>Nội khoa</doc:specialty>
+    </doc:doctor>
+  </app:appointment>
+
+  <app:appointment app:id="A002" app:date="2025-03-10" app:status="Chưa khám">
+    <pat:patient pat:id="P002">
+      <pat:name>Nguyễn Văn C</pat:name>
+      <pat:dob>1985-11-20</pat:dob>
+    </pat:patient>
+    <doc:doctor doc:id="D002">
+      <doc:name>Nguyễn Văn D</doc:name>
+      <doc:specialty>Ngoại khoa</doc:specialty>
+    </doc:doctor>
+  </app:appointment>
+
+</benhvien>
