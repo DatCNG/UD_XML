@@ -1,46 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<khoahoc
-  xmlns:course="http://example.com/course"
-  xmlns:instructor="http://example.com/instructor"
-  xmlns:student="http://example.com/student">
+<!DOCTYPE khoahoc SYSTEM "khoahoc.dtd">
+<khoahoc>
+  <course id="C001" category="Lập trình">
+    <title>Python cơ bản</title>
 
-  <course:course course:id="C001" course:category="Lập trình">
-    <course:title>Python cơ bản</course:title>
+    <instructor id="I001">
+      <name>Nguyễn Văn A</name>
+      <email>nguyenvana@gmail.com</email>
+    </instructor>
 
-    <instructor:instructor instructor:id="I001">
-      <instructor:name>Nguyễn Văn A</instructor:name>
-      <instructor:email>nguyenvana@gmail.com</instructor:email>
-    </instructor:instructor>
+    <students>
+      <student id="S001" progress="80">
+        <name_student>Nguyễn Văn B</name_student>
+      </student>
+      <student id="S002" progress="50">
+        <name_student>Nguyễn Văn C</name_student>
+      </student>
+    </students>
+  </course>
 
-    <course:students>
-      <student:student student:id="S001" student:progress="80">
-        <student:name>Nguyễn Văn B</student:name>
-      </student:student>
-      <student:student student:id="S002" student:progress="50">
-        <student:name>Nguyễn Văn C</student:name>
-      </student:student>
-    </course:students>
-  </course:course>
+  <course id="C002" category="Thiết kế">
+    <title>Thiết kế UI căn bản</title>
 
-  <course:course course:id="C002" course:category="Thiết kế">
-    <course:title>Thiết kế UI căn bản</course:title>
+    <instructor id="I002">
+      <name>Nguyễn Văn D</name>
+      <email>nguyenvand@gmail.com</email>
+    </instructor>
 
-    <instructor:instructor instructor:id="I002">
-      <instructor:name>Nguyễn Văn D</instructor:name>
-      <instructor:email>nguyenvand@gmail.com</instructor:email>
-    </instructor:instructor>
-
-    <course:students>
-      <student:student student:id="S003" student:progress="95">
-        <student:name>Nguyễn Văn E</student:name>
-      </student:student>
-      <student:student student:id="S004" student:progress="60">
-        <student:name>Nguyễn Văn F</student:name>
-      </student:student>
-      <student:student student:id="S005" student:progress="30">
-        <student:name>Nguyễn Văn G</student:name>
-      </student:student>
-    </course:students>
-  </course:course>
-
+    <students>
+      <student id="S003" progress="95">
+        <name>Nguyễn Văn E</name>
+      </student>
+      <student id="S004" progress="60">
+        <name>Nguyễn Văn F</name>
+      </student>
+      <student id="S005" progress="30">
+        <name>Nguyễn Văn G</name>
+      </student>
+    </students>
+  </course>
 </khoahoc>
