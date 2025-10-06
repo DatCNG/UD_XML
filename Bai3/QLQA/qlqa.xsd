@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://example.com/quanan"
+  xmlns="http://example.com/quanan"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <xs:simpleType name="Char10">
+    <xs.restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs.restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Varchar50">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="UsernameType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="6"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PasswordType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="10"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Money">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:element name="QUANAN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="BANS" type="BansType"/>
+        <xs:element name="NHANVIENS" type="NhanViensType"/>
+        <xs:element name="MONS" type="MonsType"/>
+        <xs:element name="HOADONS" type="HoaDonsType"/>
+      </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:key name="banKey">
+      <xs:selector xpath="BANS/BAN"/>
+      <xs:field xpath="SOBAN"/>
+    </xs:key>
+
+    <xs:key name="nvKey">
+      <xs:selector xpath="NHANVIENS/NHANVIEN"/>
+      <xs:field xpath="MANV"/>
+    </xs:key>
+
+    <xs:key name="monKey">
+      <xs:selector xpath="MONS/MON"/>
+      <xs:field xpath="MAMON"/>
+    </xs:key>
+
+    <xs:key name="hdKey">
+      <xs:selector xpath="HOADONS/HOADON"/>
+      <xs:field xpath="SOHD"/>
+    </xs:key>
+
+
+    <xs:keyref name="hdBanRef" refer="banKey">
+      <xs:selector xpath="HOADONS/HOADON"/>
+      <xs:field xpath="SOBAN"/>
+    </xs:keyref>
+
+
+    <xs:keyref name="hdNvRef" refer="nvKey">
+      <xs:selector xpath="HOADONS/HOADON"/>
+      <xs:field xpath="MANV"/>
+    </xs:keyref>
+
+
+    <xs:keyref name="ctMonRef" refer="monKey">
+      <xs:selector xpath="HOADONS/HOADON/CHITIETS/CT"/>
+      <xs:field xpath="MAMON"/>
+    </xs:keyref>
+  </xs:element>
+
+
+  <xs:complexType name="BansType">
+    <xs:sequence>
+      <xs:element name="BAN" type="BanType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="NhanViensType">
+    <xs:sequence>
+      <xs:element name="NHANVIEN" type="NhanVienType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MonsType">
+    <xs:sequence>
+      <xs:element name="MON" type="MonType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="HoaDonsType">
+    <xs:sequence>
+      <xs:element name="HOADON" type="HoaDonType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="BanType">
+    <xs:sequence>
+      <xs:element name="SOBAN" type="xs:integer"/>
+      <xs:element name="TENBAN" type="Char10"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="NhanVienType">
+    <xs:sequence>
+      <xs:element name="MANV" type="Char10"/>
+      <xs:element name="TENV" type="Varchar50"/>
+      <xs:element name="SDT" type="Char10"/>
+      <xs:element name="DIACHI" type="xs:string"/>
+      <xs:element name="GIOITINH" type="xs:string"/>
+      <xs:element name="USERNAME" type="UsernameType"/>
+      <xs:element name="PASSWORD" type="PasswordType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MonType">
+    <xs:sequence>
+      <xs:element name="MAMON" type="Char10"/>
+      <xs:element name="TENMON" type="Varchar50"/>
+      <xs:element name="GIA" type="Money"/>
+      <xs:element name="HINHANH" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="HoaDonType">
+    <xs:sequence>
+      <xs:element name="SOHD" type="xs:integer"/>
+      <xs:element name="NGAYLAP" type="xs:date"/>
+      <xs:element name="SOBAN" type="xs:integer"/>   
+      <xs:element name="MANV" type="Char10"/>      
+      <xs:element name="TONGTIEN" type="Money"/>
+      <xs:element name="CHITIETS" type="ChiTietsType" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ChiTietsType">
+    <xs:sequence>
+      <xs:element name="CT" type="CTType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CTType">
+    <xs:sequence>
+      <xs:element name="MAMON" type="Char10"/>            
+      <xs:element name="SOLUONG" type="xs:positiveInteger"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
