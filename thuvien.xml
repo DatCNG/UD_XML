@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE thuvien SYSTEM "thuvien.dtd">
+<thuvien>
+    <book>
+        <title>Chí Phèo</title>
+        <author>Nam Cao</author>
+        <year>1941</year>
+        <genre>Văn học Việt Nam</genre>
+    </book>
+
+    <book>
+        <title>Sapiens: Lược Sử Loài Người</title>
+        <author>Yuval Noah Harari</author>
+        <year>2011</year>
+        <genre>Lịch sử</genre>
+    </book>
+
+    <book>
+        <title>Harry Potter và Hòn Đá Phù Thủy</title>
+        <author>J.K. Rowling</author>
+        <year>1997</year>
+        <genre>Tiểu thuyết</genre>
+    </book>
+</thuvien>

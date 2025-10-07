@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE store SYSTEM "sanpham.dtd">
+<store>
+    <sanpham 
+        id="SP001" 
+        name="Laptop Dell" 
+        category="Điện tử" 
+        price="15000000" 
+        currency="VND" 
+        brand="Dell" 
+        description="Laptop hiệu năng cao cho sinh viên và nhân viên văn phòng" 
+    />
+
+    <sanpham 
+        id="SP002" 
+        name="Tai nghe Bluetooth" 
+        category="Điện tử" 
+        price="1200000" 
+        currency="VND" 
+        brand="Sony" 
+        description="Tai nghe không dây" 
+    />
+
+    <sanpham 
+        id="SP003" 
+        name="Áo sơ mi" 
+        category="Thời trang" 
+        price="450000" 
+        currency="VND" 
+        brand="LV" 
+        description="Áo sơ mi công sở, chất liệu cotton thoáng mát" 
+    />
+</store>
